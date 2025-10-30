@@ -8,8 +8,10 @@
   <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body>
+  
   <div id="app">
-    <div class="main-screen" id="mainScreen"> <header>
+    <div class="container">
+      <header>
         <div class="title">
           <i data-lucide="ticket"></i>
           <div>
@@ -23,58 +25,66 @@
         </div>
       </header>
 
-      <div class="stats">
-        <div class="stat blue">
-          <div class="value" id="activeReaders">0</div>
-          <div class="label">Active Readers</div>
-          <i data-lucide="users"></i>
-        </div>
-
-        <div class="stat orange">
-          <div class="value" id="activeWriters">0</div>
-          <div class="label">Active Writers</div>
-          <i data-lucide="shopping-cart"></i>
-        </div>
-
-        <div class="stat green">
-          <div class="value" id="ticketsBooked">0</div>
-          <div class="label">Tickets Booked</div>
-          <i data-lucide="check-circle"></i>
-        </div>
-      </div>
-
-      <div class="operations">
-        <div class="operation blue">
-          <h3><i data-lucide="users"></i> Reader Operation</h3>
-          <button id="viewBtn">View Available Tickets</button>
-          <p>Multiple readers can check simultaneously</p>
-        </div>
-
-        <div class="operation orange">
-          <h3><i data-lucide="shopping-cart"></i> Writer Operation</h3>
-          <div class="input-row">
-            <input type="number" id="bookCount" placeholder="Tickets to book" min="1">
-            <button id="bookBtn">Book</button>
+      <main id="mainScreen">
+        <div class="stats">
+          <div class="stat blue">
+            <i data-lucide="users"></i>
+            <div class="stat-info">
+              <div class="value" id="activeReaders">0</div>
+              <div class="label">Active Readers</div>
+            </div>
           </div>
-          <p>Writers get exclusive access to database</p>
-        </div>
 
-        <div class="operation green">
-          <h3><i data-lucide="plus-circle"></i> Admin Operation</h3>
-          <div class="input-row">
-            <input type="number" id="restockCount" placeholder="Tickets to add" min="1">
-            <button id="restockBtn">Restock</button>
+          <div class="stat orange">
+            <i data-lucide="shopping-cart"></i>
+            <div class="stat-info">
+              <div class="value" id="activeWriters">0</div>
+              <div class="label">Active Writers</div>
+            </div>
           </div>
-          <p>Adds new tickets to the total pool</p>
-        </div>
-      </div>
 
-      <div class="logs">
-        <h3><i data-lucide="activity"></i> System Activity Log</h3>
-        <div id="logContainer" class="log-container">
-          <p class="empty">No activity yet. Start by viewing tickets or booking!</p>
+          <div class="stat green">
+            <i data-lucide="check-circle"></i>
+            <div class="stat-info">
+              <div class="value" id="ticketsBooked">0</div>
+              <div class="label">Tickets Booked</div>
+            </div>
+          </div>
         </div>
-      </div>
+
+        <div class="operations">
+          <div class="operation blue">
+            <h3><i data-lucide="users"></i> Reader Operation</h3>
+            <p>Multiple readers can check simultaneously.</p>
+            <button id="viewBtn">View Available Tickets</button>
+          </div>
+
+          <div class="operation orange">
+            <h3><i data-lucide="shopping-cart"></i> Writer Operation</h3>
+            <p>Writers get exclusive access to book.</p>
+            <div class="input-row">
+              <input type="number" id="bookCount" placeholder="Tickets to book" min="1">
+              <button id="bookBtn">Book</button>
+            </div>
+          </div>
+
+          <div class="operation green">
+            <h3><i data-lucide="plus-circle"></i> Admin Operation</h3>
+            <p>Adds new tickets to the total pool.</p>
+            <div class="input-row">
+              <input type="number" id="restockCount" placeholder="Tickets to add" min="1">
+              <button id="restockBtn">Restock</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="logs">
+          <h3><i data-lucide="activity"></i> System Activity Log</h3>
+          <div id="logContainer" class="log-container">
+            <p class="empty">No activity yet. Start by viewing tickets or booking!</p>
+          </div>
+        </div>
+      </main>
     </div>
   </div>
 
