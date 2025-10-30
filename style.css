@@ -16,74 +16,9 @@ body {
 }
 
 /* ----- Initialization Screen ----- */
-.init-screen .card {
-  background: #fff;
-  border-radius: 16px;
-  padding: 40px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-  text-align: center;
-  max-width: 400px;
-  width: 100%;
-}
-
-.init-screen .icon i {
-  width: 64px;
-  height: 64px;
-  color: #4f46e5;
-  margin-bottom: 12px;
-}
-
-.init-screen h1 {
-  font-size: 28px;
-  font-weight: 700;
-  color: #111827;
-  margin-bottom: 8px;
-}
-
-.subtitle {
-  color: #6b7280;
-  margin-bottom: 24px;
-}
-
-.input-group {
-  text-align: left;
-  margin-bottom: 16px;
-}
-
-.input-group label {
-  font-size: 14px;
-  color: #374151;
-  margin-bottom: 6px;
-  display: block;
-}
-
-.input-group input {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #d1d5db;
-  border-radius: 8px;
-  outline: none;
-}
-
-.input-group input:focus {
-  border-color: #4f46e5;
-  box-shadow: 0 0 0 2px #c7d2fe;
-}
-
-#initBtn {
-  width: 100%;
-  padding: 12px;
-  background: #4f46e5;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  font-weight: 600;
-  cursor: pointer;
-}
-
-#initBtn:hover {
-  background: #4338ca;
-}
+/* ... All styles from .init-screen .card to #initBtn:hover
+  have been REMOVED ...
+*/
 
 /* ----- Main Screen ----- */
 .main-screen {
@@ -176,7 +111,7 @@ header {
 /* ----- Operations ----- */
 .operations {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Modified for 3 columns */
   gap: 16px;
   margin-bottom: 24px;
 }
@@ -234,6 +169,30 @@ header {
 .operation.orange button:hover {
   background: #9a3412;
 }
+
+/* ----- Style for new card ----- */
+.operation.green {
+  background: #ecfdf5;
+  border-color: #a7f3d0;
+}
+
+.operation.green button {
+  background: #10b981;
+}
+
+.operation.green button:hover {
+  background: #065f46;
+}
+
+.operation.green .input-row input {
+  border-color: #6ee7b7;
+}
+
+.operation.green .input-row input:focus {
+  border-color: #10b981;
+  box-shadow: 0 0 0 2px #a7f3d0;
+}
+/* ------------------------------ */
 
 .input-row {
   display: flex;
