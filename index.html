@@ -3,20 +3,26 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>E-Ticket Booking System</title>
+  <title>E-Ticket System | Dashboard</title>
+  
   <link rel="stylesheet" href="style.css" />
+  
+  <link rel="stylesheet" href="theme.css" /> 
+  
   <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body>
   
   <div id="app">
-    <div class="container">
+
+    <div class="column left-column">
+      
       <header>
         <div class="title">
           <i data-lucide="ticket"></i>
           <div>
-            <h2>E-Ticket Booking System</h2>
-            <p>Reader–Writer Synchronization Demo</p>
+            <h2>E-Ticket System</h2>
+            <p>Synchronization Demo</p>
           </div>
         </div>
         <div class="ticket-info">
@@ -24,70 +30,72 @@
           <div>Available Tickets</div>
         </div>
       </header>
+      
+      <div class="operations">
+        <div class="operation blue">
+          <h3><i data-lucide="users"></i> Reader Operation</h3>
+          <p>Multiple readers can check simultaneously.</p>
+          <button id="viewBtn">View Available Tickets</button>
+        </div>
 
-      <main id="mainScreen">
-        <div class="stats">
-          <div class="stat blue">
-            <i data-lucide="users"></i>
-            <div class="stat-info">
-              <div class="value" id="activeReaders">0</div>
-              <div class="label">Active Readers</div>
-            </div>
-          </div>
-
-          <div class="stat orange">
-            <i data-lucide="shopping-cart"></i>
-            <div class="stat-info">
-              <div class="value" id="activeWriters">0</div>
-              <div class="label">Active Writers</div>
-            </div>
-          </div>
-
-          <div class="stat green">
-            <i data-lucide="check-circle"></i>
-            <div class="stat-info">
-              <div class="value" id="ticketsBooked">0</div>
-              <div class="label">Tickets Booked</div>
-            </div>
+        <div class="operation orange">
+          <h3><i data-lucide="shopping-cart"></i> Writer Operation</h3>
+          <p>Writers get exclusive access to book.</p>
+          <div class="input-row">
+            <input type="number" id="bookCount" placeholder="Tickets to book" min="1">
+            <button id="bookBtn">Book</button>
           </div>
         </div>
 
-        <div class="operations">
-          <div class="operation blue">
-            <h3><i data-lucide="users"></i> Reader Operation</h3>
-            <p>Multiple readers can check simultaneously.</p>
-            <button id="viewBtn">View Available Tickets</button>
-          </div>
-
-          <div class="operation orange">
-            <h3><i data-lucide="shopping-cart"></i> Writer Operation</h3>
-            <p>Writers get exclusive access to book.</p>
-            <div class="input-row">
-              <input type="number" id="bookCount" placeholder="Tickets to book" min="1">
-              <button id="bookBtn">Book</button>
-            </div>
-          </div>
-
-          <div class="operation green">
-            <h3><i data-lucide="plus-circle"></i> Admin Operation</h3>
-            <p>Adds new tickets to the total pool.</p>
-            <div class="input-row">
-              <input type="number" id="restockCount" placeholder="Tickets to add" min="1">
-              <button id="restockBtn">Restock</button>
-            </div>
+        <div class="operation green">
+          <h3><i data-lucide="plus-circle"></i> Admin Operation</h3>
+          <p>Adds new tickets to the total pool.</p>
+          <div class="input-row">
+            <input type="number" id="restockCount" placeholder="Tickets to add" min="1">
+            <button id="restockBtn">Restock</button>
           </div>
         </div>
-
-        <div class="logs">
-          <h3><i data-lucide="activity"></i> System Activity Log</h3>
-          <div id="logContainer" class="log-container">
-            <p class="empty">No activity yet. Start by viewing tickets or booking!</p>
-          </div>
-        </div>
-      </main>
+      </div>
+      
     </div>
-  </div>
+    
+    <div class="column right-column">
 
-  <script src="script.js"></script>
+      <div class="stats">
+        <div class="stat blue">
+          <i data-lucide="users"></i>
+          <div class="stat-info">
+            <div class="value" id="activeReaders">0</div>
+            <div class="label">Active Readers</div>
+          </div>
+        </div>
+
+        <div class="stat orange">
+          <i data-lucide="shopping-cart"></i>
+          <div class="stat-info">
+            <div class="value" id="activeWriters">0</div>
+            <div class="label">Active Writers</div>
+          </div>
+        </div>
+
+        <div class="stat green">
+          <i data-lucide="check-circle"></i>
+          <div class="stat-info">
+            <div class="value" id="ticketsBooked">0</div>
+            <div class="label">Tickets Booked</div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="logs">
+        <h3><i data-lucide="activity"></i> System Activity Log</h3>
+        <div id="logContainer" class="log-container">
+          <p class="empty">No activity yet. Start by viewing tickets or booking!</p>
+        </div>
+      </div>
+      
+    </div>
+    
+  </div> <script src="script.js"></script>
 </body>
 </html>

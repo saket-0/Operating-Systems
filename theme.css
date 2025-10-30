@@ -1,0 +1,77 @@
+/* --- Artistic Font Theme --- */
+
+/* 1. Import new fonts from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Poppins:wght@300;400;500&display=swap');
+
+/* 'Orbitron' is our "artistic" heading font.
+   'Poppins' is our clean, modern body font.
+*/
+
+:root {
+  /* 2. Define new font variables */
+  --font-family-heading: 'Inter', sans-serif;
+  --font-family-body: 'Poppins', sans-serif;
+
+  /* 3. Override the base font from style.css */
+  /* This changes all text to Poppins by default */
+  --font-family: var(--font-family-body);
+}
+
+/* 4. Apply the "artistic" font to specific elements */
+
+/* Header Title */
+header .title h2 {
+  font-family: var(--font-family-heading);
+  font-weight: 700;
+  font-size: 1.7rem; /* Tweak size for the new font */
+  letter-spacing: 0.5px;
+  text-transform: uppercase; /* Looks great with Orbitron */
+}
+
+/* Main Ticket Counter */
+.ticket-count {
+  font-family: var(--font-family-heading);
+  font-weight: 700;
+  font-size: 2.2rem;
+}
+
+/* Stat Values */
+.stat .value {
+  font-family: var(--font-family-heading);
+  font-weight: 600;
+  font-size: 1.75rem;
+  line-height: 1.2;
+}
+
+/* Card Headings */
+.operation h3,
+.logs h3 {
+  font-family: var(--font-family-heading);
+  font-weight: 500;
+  font-size: 1.2rem;
+  letter-spacing: 0.5px;
+}
+
+/* 5. Fine-tune the body font weights for clarity */
+
+body {
+    font-weight: 400; /* Default Poppins weight */
+}
+
+/* Lighter for descriptions */
+p, .label, .ticket-info div:last-child {
+    font-weight: 300;
+    font-size: 0.95rem; /* Slightly larger for readability */
+}
+
+/* Medium for UI controls */
+.operation button,
+.input-row input {
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+/* Default weight for logs */
+.log-entry {
+    font-weight: 400;
+}
