@@ -345,3 +345,9 @@ header {
     grid-template-columns: 1fr; /* Stack stats */
   }
 }
+
+/* --- Added for consistent button sizing --- */
+.input-row button {
+  flex-shrink: 0; /* Prevents button from shrinking */
+  width: 110px;   /* Sets a consistent width for 'Book' and 'Restock' */
+}
