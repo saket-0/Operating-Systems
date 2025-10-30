@@ -27,7 +27,7 @@ Demonstrates real-time concurrency.
 
 Clone this repository:
 
-git clone https://github.com/050025493/operating-system-project.git
+git clone https://github.com/saket-0/operating-system-project.git
 
 
 Navigate to the folder:
